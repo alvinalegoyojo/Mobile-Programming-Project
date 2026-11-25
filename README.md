@@ -1,0 +1,3 @@
+## Lab Activity 1: Discussion
+
+To integrate images dynamically into `newsfeed_card.dart`, I added `hasImage` (a boolean flag) and `postImage` (an optional image path string) to the `NewsFeedCard` constructor alongside a helper method `_buildPostImage()`. When `hasImage` is `false`, the widget renders only a minimal `SizedBox` spacer so text-only posts stay compact without empty whitespace. When `hasImage` is `true`, it checks `postImage` and renders Flutter's `Image.asset` (or `Image.network` for URLs) wrapped in a `ClipRRect` and `SizedBox` with `BoxFit.cover` so the image fills the card width cleanly—falling back to a `Placeholder` widget if no image path is supplied.
